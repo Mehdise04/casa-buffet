@@ -59,7 +59,20 @@ export default function Footer() {
                         <span className="material-symbols-outlined text-primary text-xl">call</span>
                         <div>
                             <p className="text-[10px] uppercase opacity-40 mb-1">WhatsApp</p>
-                            <a href="https://api.whatsapp.com/message/LM65OTGTRX7EO1" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">+212 701-145101</a>
+                            <a 
+                                href="https://api.whatsapp.com/message/LM65OTGTRX7EO1" 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                onClick={() => {
+                                    if (typeof window.gtag !== 'undefined') {
+                                        window.gtag('event', 'whatsapp_click', { 
+                                            event_category: 'footer',
+                                            event_label: 'footer_contact'
+                                        });
+                                    }
+                                }}
+                                className="hover:text-primary transition-colors"
+                            >+212 701-145101</a>
                         </div>
                     </li>
                     <li className="flex items-start gap-4">

@@ -47,7 +47,18 @@ export default function BookingCta() {
                     <p className="italic mb-8 opacity-90 text-slate-700 dark:text-slate-200">Besoin d'un devis personnalisé ou d'une information rapide ?</p>
                     
                     {/* Fixed button: reduced text size to text-sm and used flex-shrink-0 on the icon */}
-                    <a href="https://wa.me/212701145101" className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg w-full">
+                    <a 
+                        href="https://wa.me/212701145101" 
+                        onClick={() => {
+                            if (typeof window.gtag !== 'undefined') {
+                                window.gtag('event', 'whatsapp_click', { 
+                                    event_category: 'booking_cta',
+                                    event_label: 'booking_section'
+                                });
+                            }
+                        }}
+                        className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg w-full"
+                    >
                         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current flex-shrink-0"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.449-1.27.61-1.444.161-.173.346-.217.461-.217.115 0 .231.001.331.005.106.004.25-.039.391.305.143.347.491 1.196.535 1.281.043.086.072.187.015.304-.058.117-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.777 1.394.864.174.088.275.073.376-.042.101-.116.433-.506.548-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"></path></svg>
                         <span className="uppercase tracking-wide">Contacter via WhatsApp</span>
                     </a>
