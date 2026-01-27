@@ -79,7 +79,7 @@ export default function Footer() {
                         <span className="material-symbols-outlined text-primary text-xl">mail</span>
                         <div>
                             <p className="text-[10px] uppercase opacity-40 mb-1">Email</p>
-                            <p>Casabuffet001@gmail.com</p>
+                            <p>casa.buffet001@gmail.com</p>
                         </div>
                     </li>
                     <li className="flex items-start gap-4">
