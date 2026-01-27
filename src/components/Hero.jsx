@@ -4,17 +4,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden bg-gradient-to-b from-purple-50 to-white">
         {/* Decorative elements */}
-        <div className="absolute top-20 left-[20%] text-blue-200 text-4xl animate-pulse">✦</div>
-        <div className="absolute top-16 right-[20%] text-purple-200 text-3xl animate-pulse delay-700">✦</div>
+        <div className="absolute top-40 left-[20%] text-blue-200 text-4xl animate-pulse">✦</div>
+        <div className="absolute top-30 right-[20%] text-purple-200 text-3xl animate-pulse delay-700">✦</div>
+        <div className="absolute top-32 right-[20%] text-purple-200 text-3xl animate-pulse delay-700">✦</div>
         
         <div className="relative z-10 max-w-4xl w-full text-center">
             
-            {/* Badge */}
-            <div className="inline-block mb-6">
-                <span className="bg-purple-100/80 text-purple-600 px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase">
-                    Buffets & Bonheur
-                </span>
-            </div>
+        
 
             {/* Title / Logo */}
             <div className="flex justify-center mb-6 py-2">
