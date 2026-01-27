@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   try {
     const data = await resend.emails.send({
       from: 'Casa Buffet <onboarding@resend.dev>', // Default testing domain for Resend
-      to: ['casabuffet001@gmail.com'], // Send to the business email
+      to: ['mehdisifessalam111@gmail.com'], // Send to the business email
       reply_to: user_email,
       subject: `Nouveau message de ${user_name}`,
       html: `
