@@ -49,6 +49,8 @@ export default function BookingCta() {
                     {/* Fixed button: reduced text size to text-sm and used flex-shrink-0 on the icon */}
                     <a 
                         href="https://wa.me/212701145101" 
+                        target="_blank"
+                        rel="noreferrer"
                         onClick={() => {
                             if (typeof window.gtag !== 'undefined') {
                                 window.gtag('event', 'whatsapp_click', { 
