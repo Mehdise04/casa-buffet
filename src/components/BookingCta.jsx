@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function BookingCta() {
   return (
-    <section className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
+    <section id="booking" className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-5xl mx-auto glass-card bg-white/90 dark:bg-slate-800/90 rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-12 lg:p-20 relative overflow-hidden shadow-xl border border-white/40">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-300 via-primary to-blue-300"></div>
             

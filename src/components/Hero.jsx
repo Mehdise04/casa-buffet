@@ -25,7 +25,7 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#contact" className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-purple-600 transition-colors shadow-lg shadow-purple-200 min-w-[240px]">
+                <a href="#booking" className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-purple-600 transition-colors shadow-lg shadow-purple-200 min-w-[240px]">
                     Planifier mon événement
                 </a>
                 <a href="#services" className="px-8 py-4 bg-white text-primary rounded-full font-medium border-2 border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all shadow-sm min-w-[240px]">
