@@ -24,7 +24,7 @@ export default function Hero() {
             {/* Subtitle */}
             <p className="font-sans font-light text-xl lg:text-3xl text-slate-600 italic mb-12 max-w-2xl mx-auto leading-relaxed">
                 Buffets & douceurs that warm the heart.<br/>
-                Petits prix, big vibes🤗, made with love 🥰
+                Petits prix, big vibes 🤗, made with love 🥰
             </p>
 
             {/* Buttons */}

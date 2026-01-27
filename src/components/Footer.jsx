@@ -10,7 +10,7 @@ export default function Footer() {
                 </div>
                 <p className="text-xs leading-loose opacity-60 max-w-xs font-light italic">
                     Buffets & douceurs that warm the heart.<br/>
-                    Petits prix, big vibes🤗, made with love 🥰
+                    Petits prix, big vibes 🤗, made with love 🥰
                 </p>
                 <div className="flex space-x-5">
                     {/* Facebook */}
