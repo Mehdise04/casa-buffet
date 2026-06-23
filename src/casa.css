@@ -361,6 +361,8 @@ section[id] { scroll-margin-top: 90px; }
   .cb-collage { height: 380px; }
   .cb-solutions-list { grid-template-columns: 1fr; }
   .cb-real-grid { grid-template-columns: 1fr; }
+  .cb-pro-strip { grid-template-columns: 1fr; }
+  .cb-pro-strip .cb-cell { height: 230px; }
   .cb-footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .cb-btn-primary, .cb-btn-ghost, .cb-btn-white, .cb-btn-outline { padding: 14px 22px; }
 }
