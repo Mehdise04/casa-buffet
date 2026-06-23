@@ -1,13 +1,16 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
+import { useLightbox } from './Lightbox';
 
 export default function Concept() {
+  const { open } = useLightbox();
+  const pic = photo(SETS.engagement[1]);
   return (
     <section style={{ padding: '110px 0', background: '#EBE2F8' }}>
       <div className="cb-container cb-story-grid">
         <div className="cb-story-art">
           <div className="frame" />
-          <img src={photo(SETS.engagement[1])} alt="L'histoire de Casa Buffet" />
+          <img src={pic} alt="L'histoire de Casa Buffet" style={{ cursor: 'zoom-in' }} onClick={() => open([{ src: pic, caption: 'Casa Buffet' }], 0)} />
         </div>
         <div>
           <span className="cb-eyebrow">Notre histoire</span>

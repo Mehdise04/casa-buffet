@@ -1,5 +1,6 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
+import { useLightbox } from './Lightbox';
 
 const reasons = [
   { num: '01', title: 'Une approche personnalisée', desc: 'Chaque événement est unique et mérite une prestation adaptée à vos attentes.' },
@@ -10,6 +11,8 @@ const reasons = [
 ];
 
 export default function BookingCta() {
+  const { open } = useLightbox();
+  const pic = photo(SETS.dessert[1]);
   return (
     <section id="pourquoi" className="cb-section" style={{ background: '#EEE4FA' }}>
       <div className="cb-container cb-why-grid">
@@ -22,7 +25,7 @@ export default function BookingCta() {
           <p className="cb-body" style={{ fontSize: 16, margin: '22px 0 28px', maxWidth: 380 }}>
             Nous sommes convaincus que la réussite d'un événement repose sur l'équilibre entre qualité, présentation et attention portée aux détails. C'est cette philosophie qui guide chacune de nos réalisations.
           </p>
-          <img src={photo(SETS.dessert[1])} alt="Présentation Casa Buffet" loading="lazy" />
+          <img src={pic} alt="Présentation Casa Buffet" loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => open([{ src: pic, caption: 'Casa Buffet' }], 0)} />
         </div>
 
         <div>

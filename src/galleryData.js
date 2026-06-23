@@ -1,6 +1,6 @@
 // Real Casa Buffet photo library, classified by visual analysis of each image.
 // Vite bundles everything under src/assets/images and gives us hashed URLs.
-const modules = import.meta.glob('./assets/images/*.jpeg', { eager: true, query: '?url', import: 'default' });
+const modules = import.meta.glob('./assets/images/*.{jpeg,jpg,png}', { eager: true, query: '?url', import: 'default' });
 
 const urlByName = {};
 for (const path in modules) {
@@ -100,6 +100,12 @@ export const SETS = {
     '9CBEB4C9-9E7D-486C-9A62-7080141A8DCC.jpeg',
   ],
   professional: [
+    'sitepro-1.jpeg',
+    'sitepro-2.jpeg',
+    'sitepro-3.jpeg',
+    'sitepro-4.jpeg',
+    'sitepro-5.jpeg',
+    'sitepro-6.jpeg',
     '14B2F697-C396-409E-B996-B27C20849162.jpeg',
     'AA56B84C-F52D-4600-82AD-101D19AAC7E7.jpeg',
     '9071E6BF-125B-45C2-BC64-1F3D3A44D6D1.jpeg',
@@ -110,22 +116,39 @@ export const SETS = {
     'E044D8AF-4E1C-4D3F-9F21-3B59C27D69E5.jpeg',
     '92C1E233-4E15-499B-B50F-3264F12CBD9A.jpeg',
   ],
-  celebrations: [
+  // New real-event categories from the Siteweb drop
+  babyshower: [
+    'babyshower-1.png',
+    'babyshower-2.png',
+    'babyshower-3.png',
+    '1ADE5784-ACB5-4C15-B920-30CA5E3C8E8C.jpeg',
+    '3117007D-0604-4F6B-9EE7-D1F7731FC46B.jpeg',
+  ],
+  anniversaire: [
+    'anniversaire-1.jpeg',
+    'anniversaire-2.jpeg',
+    'anniversaire-3.jpeg',
+  ],
+  soutenance: [
+    'soutenance-1.jpeg',
+    'soutenance-2.jpeg',
+    'soutenance-3.jpeg',
+    'soutenance-4.jpeg',
     '3A482B5A-B6B1-4674-81FC-5D8C293814D5.jpeg',
     'E95BD36C-D542-408D-9261-BD7FCA8A4A61.jpeg',
     'B2FCEE66-4C3C-473A-B56B-B84C36EC15C5.jpeg',
-    '1ADE5784-ACB5-4C15-B920-30CA5E3C8E8C.jpeg',
-    '3117007D-0604-4F6B-9EE7-D1F7731FC46B.jpeg',
   ],
 };
 
 // ---- Tabs for the Galerie section ----
 export const GALLERY_TABS = [
   { key: 'engagement', label: 'Fiançailles' },
+  { key: 'babyshower', label: 'Baby Shower' },
+  { key: 'anniversaire', label: 'Anniversaires' },
+  { key: 'soutenance', label: 'Soutenances' },
   { key: 'dessert', label: 'Douceurs' },
   { key: 'savory', label: 'Buffet salé' },
   { key: 'decor', label: 'Décor & ambiance' },
   { key: 'professional', label: 'Professionnels' },
   { key: 'drinks', label: 'Boissons' },
-  { key: 'celebrations', label: 'Célébrations' },
 ];

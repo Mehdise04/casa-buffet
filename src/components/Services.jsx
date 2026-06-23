@@ -1,5 +1,6 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
+import { useLightbox, ZoomBadge } from './Lightbox';
 
 const categories = [
   {
@@ -12,26 +13,33 @@ const categories = [
     num: '02', side: 'text-right', title: 'Soutenances',
     desc: 'Célébrez vos réussites dans une ambiance conviviale et élégante.',
     layout: 'l3b',
-    imgs: [SETS.celebrations[1], SETS.celebrations[0], SETS.celebrations[2]],
+    imgs: [SETS.soutenance[1], SETS.soutenance[0], SETS.soutenance[2]],
   },
   {
     num: '03', side: 'text-left', title: 'Baby Shower & Naissances',
     desc: 'Des prestations adaptées et délicates pour accueillir les moments les plus précieux.',
-    layout: 'l4',
-    imgs: [SETS.celebrations[3], SETS.celebrations[4], SETS.dessert[2], SETS.engagement[19]],
+    layout: 'l3a',
+    imgs: [SETS.babyshower[0], SETS.babyshower[1], SETS.babyshower[2]],
   },
   {
-    num: '04', side: 'text-right', title: 'Réceptions privées',
-    desc: 'Anniversaires, réunions familiales et célébrations sur mesure.',
+    num: '04', side: 'text-right', title: 'Anniversaires',
+    desc: 'Anniversaires, réunions familiales et célébrations sur mesure, pour petits et grands.',
     layout: 'l3a',
-    imgs: [SETS.decor[12], SETS.dessert[3], SETS.savory[3]],
+    imgs: [SETS.anniversaire[0], SETS.anniversaire[1], SETS.anniversaire[2]],
   },
 ];
 
-function Collage({ layout, imgs }) {
+function Collage({ layout, imgs, title }) {
+  const { open } = useLightbox();
+  const openAt = (i) => open(imgs.map((n) => ({ src: photo(n), caption: title })), i);
   return (
     <div className={`cb-collage ${layout}`}>
-      {imgs.map((name) => <img key={name} src={photo(name)} alt="Réalisation Casa Buffet" loading="lazy" />)}
+      {imgs.map((name, i) => (
+        <figure key={name} className="cb-cell cb-zoomable" onClick={() => openAt(i)}>
+          <img src={photo(name)} alt={`${title} — Casa Buffet`} loading="lazy" />
+          <ZoomBadge />
+        </figure>
+      ))}
     </div>
   );
 }
@@ -66,11 +74,11 @@ export default function Services() {
             {c.side === 'text-left' ? (
               <>
                 <TextBlock {...c} />
-                <Collage layout={c.layout} imgs={c.imgs} />
+                <Collage layout={c.layout} imgs={c.imgs} title={c.title} />
               </>
             ) : (
               <>
-                <Collage layout={c.layout} imgs={c.imgs} />
+                <Collage layout={c.layout} imgs={c.imgs} title={c.title} />
                 <TextBlock {...c} />
               </>
             )}

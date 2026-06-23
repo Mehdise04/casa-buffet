@@ -1,6 +1,7 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
 import { Check } from './icons';
+import { useLightbox, ZoomBadge } from './Lightbox';
 
 const solutions = [
   "Petit-déjeuner d'affaires",
@@ -12,15 +13,19 @@ const solutions = [
 ];
 
 const realisations = [
-  { src: SETS.professional[5], label: 'Séminaire médical' },
-  { src: SETS.professional[6], label: 'Lancement de produit' },
-  { src: SETS.celebrations[4], label: 'Team Building' },
+  { src: SETS.professional[6], label: 'Séminaire médical' },
+  { src: SETS.professional[4], label: 'Lancement de produit' },
+  { src: SETS.professional[5], label: 'Team Building' },
   { src: SETS.professional[7], label: 'Formation professionnelle' },
-  { src: SETS.professional[4], label: 'Cocktail professionnel' },
-  { src: SETS.professional[8], label: 'Réunion de direction' },
+  { src: SETS.professional[8], label: 'Cocktail professionnel' },
+  { src: SETS.professional[9], label: 'Réunion de direction' },
 ];
 
 export default function WorkGallery() {
+  const { open } = useLightbox();
+  const strip = SETS.professional.slice(0, 4);
+  const openStrip = (i) => open(strip.map((n) => ({ src: photo(n), caption: 'Événement professionnel' })), i);
+  const openReal = (i) => open(realisations.map((r) => ({ src: photo(r.src), caption: r.label })), i);
   return (
     <section id="pro" style={{ padding: '118px 0', background: '#E6DBF6' }}>
       <div className="cb-container">
@@ -36,8 +41,11 @@ export default function WorkGallery() {
         </div>
 
         <div className="cb-pro-strip">
-          {SETS.professional.slice(0, 4).map((name) => (
-            <img key={name} src={photo(name)} alt="Événement professionnel" loading="lazy" />
+          {strip.map((name, i) => (
+            <figure key={name} className="cb-cell cb-zoomable" onClick={() => openStrip(i)}>
+              <img src={photo(name)} alt="Événement professionnel" loading="lazy" />
+              <ZoomBadge />
+            </figure>
           ))}
         </div>
 
@@ -61,8 +69,8 @@ export default function WorkGallery() {
         <div style={{ marginTop: 80 }}>
           <h3 style={{ fontWeight: 500, fontSize: 26, color: '#2E2640', margin: '0 0 26px', letterSpacing: '-0.3px' }}>Nos réalisations</h3>
           <div className="cb-real-grid">
-            {realisations.map((r) => (
-              <div key={r.label} className="cb-real">
+            {realisations.map((r, i) => (
+              <div key={r.label} className="cb-real" onClick={() => openReal(i)}>
                 <img src={photo(r.src)} alt={r.label} loading="lazy" />
                 <div className="veil" />
                 <span className="cap">{r.label}</span>

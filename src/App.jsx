@@ -8,10 +8,11 @@ import BookingCta from './components/BookingCta';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { LightboxProvider } from './components/Lightbox';
 
 function App() {
   return (
-    <div>
+    <LightboxProvider>
       <Navbar />
       <main>
         <Hero />
@@ -23,7 +24,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </LightboxProvider>
   );
 }
 
