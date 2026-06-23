@@ -97,7 +97,6 @@ export const SETS = {
     '990292FA-733A-4B58-BA1C-79FF0A788321.jpeg',
     '00EE2CC8-B358-4B07-82F6-6E122E9CD7D8.jpeg',
     '8C07267D-6781-4A25-B26B-5DE5EBB0E8EF.jpeg',
-    '9CBEB4C9-9E7D-486C-9A62-7080141A8DCC.jpeg',
   ],
   professional: [
     'sitepro-1.jpeg',
@@ -113,6 +112,8 @@ export const SETS = {
     '36300E78-0910-47AA-A02A-AC5995B4E2C1.jpeg',
     'E044D8AF-4E1C-4D3F-9F21-3B59C27D69E5.jpeg',
     '92C1E233-4E15-499B-B50F-3264F12CBD9A.jpeg',
+    'sitepro-7.jpeg',
+    'sitepro-8.jpeg',
   ],
   // New real-event categories from the Siteweb drop
   babyshower: [
