@@ -1,50 +1,82 @@
 import React from 'react';
+import { photo, SETS } from '../galleryData';
+
+const categories = [
+  {
+    num: '01', side: 'text-left', title: 'Fiançailles',
+    desc: "Des buffets raffinés et des coffrets cadeaux conçus pour accompagner l'un des plus beaux moments de votre vie.",
+    layout: 'l3a',
+    imgs: [SETS.engagement[0], SETS.engagement[4], SETS.engagement[5]],
+  },
+  {
+    num: '02', side: 'text-right', title: 'Soutenances',
+    desc: 'Célébrez vos réussites dans une ambiance conviviale et élégante.',
+    layout: 'l3b',
+    imgs: [SETS.celebrations[1], SETS.celebrations[0], SETS.celebrations[2]],
+  },
+  {
+    num: '03', side: 'text-left', title: 'Baby Shower & Naissances',
+    desc: 'Des prestations adaptées et délicates pour accueillir les moments les plus précieux.',
+    layout: 'l4',
+    imgs: [SETS.celebrations[3], SETS.celebrations[4], SETS.dessert[2], SETS.engagement[19]],
+  },
+  {
+    num: '04', side: 'text-right', title: 'Réceptions privées',
+    desc: 'Anniversaires, réunions familiales et célébrations sur mesure.',
+    layout: 'l3a',
+    imgs: [SETS.decor[12], SETS.dessert[3], SETS.savory[3]],
+  },
+];
+
+function Collage({ layout, imgs }) {
+  return (
+    <div className={`cb-collage ${layout}`}>
+      {imgs.map((name) => <img key={name} src={photo(name)} alt="Réalisation Casa Buffet" loading="lazy" />)}
+    </div>
+  );
+}
+
+function TextBlock({ num, title, desc }) {
+  return (
+    <div>
+      <span className="cb-prive-num">{num}</span>
+      <h3 className="cb-prive-title">{title}</h3>
+      <p className="cb-prive-desc">{desc}</p>
+    </div>
+  );
+}
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 px-4 bg-white/30 dark:bg-slate-900/30">
-        <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-                <p className="text-primary tracking-[0.4em] uppercase text-xs font-bold mb-3">Excellence</p>
-                <h3 className="font-sans text-5xl text-slate-800 dark:text-white mb-6">Services Sur-Mesure</h3>
-                <div className="w-24 h-px bg-primary/30 mx-auto"></div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Private Events */}
-                <div className="bg-white p-10 rounded-[2.5rem] text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                    <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-8">
-                        <span className="material-symbols-outlined text-purple-400 text-3xl">cake</span>
-                    </div>
-                    <h4 className="font-sans font-bold text-2xl mb-4 text-slate-800">Événements Privés</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                        Anniversaires, mariages, baby showers. Nous créons des buffets qui racontent votre histoire.
-                    </p>
-                </div>
-
-                {/* Professional Buffets */}
-                <div className="bg-white p-10 rounded-[2.5rem] text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-8">
-                        <span className="material-symbols-outlined text-blue-400 text-3xl">business_center</span>
-                    </div>
-                    <h4 className="font-sans font-bold text-2xl mb-4 text-slate-800">Buffets Professionnels</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                        Lancements de produits, séminaires ou cocktails dînatoires. Une touche de raffinement pour vos affaires.
-                    </p>
-                </div>
-
-                {/* Catering */}
-                <div className="bg-white p-10 rounded-[2.5rem] text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                    <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-8">
-                        <span className="material-symbols-outlined text-orange-400 text-3xl">star</span>
-                    </div>
-                    <h4 className="font-sans font-bold text-2xl mb-4 text-slate-800">Catering Spécialisé</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                        Bar à thèmes, pâtisseries fines et buffets salés gourmets adaptés à vos thématiques.
-                    </p>
-                </div>
-            </div>
+    <section id="prives" style={{ padding: '118px 0 96px', background: '#F5EFFC' }}>
+      <div className="cb-container">
+        <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
+          <span className="cb-eyebrow">Événements privés</span>
+          <h2 className="cb-h2">
+            Parce que certains moments méritent d'être{' '}
+            <span className="script" style={{ color: '#6A48AC', fontWeight: 400, fontSize: '1.05em' }}>inoubliables.</span>
+          </h2>
+          <p className="cb-body" style={{ marginTop: 22 }}>
+            Casa Buffet accompagne vos événements privés avec des prestations élégantes, personnalisées et pensées dans les moindres détails.
+          </p>
         </div>
+
+        {categories.map((c, i) => (
+          <div key={c.num} className={`cb-prive-row ${c.side}`} style={i === 0 ? { marginTop: 84 } : undefined}>
+            {c.side === 'text-left' ? (
+              <>
+                <TextBlock {...c} />
+                <Collage layout={c.layout} imgs={c.imgs} />
+              </>
+            ) : (
+              <>
+                <Collage layout={c.layout} imgs={c.imgs} />
+                <TextBlock {...c} />
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

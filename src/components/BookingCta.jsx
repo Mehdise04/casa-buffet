@@ -1,74 +1,42 @@
 import React from 'react';
+import { photo, SETS } from '../galleryData';
+
+const reasons = [
+  { num: '01', title: 'Une approche personnalisée', desc: 'Chaque événement est unique et mérite une prestation adaptée à vos attentes.' },
+  { num: '02', title: 'Le sens du détail', desc: 'Parce que les plus beaux souvenirs se construisent dans les détails.' },
+  { num: '03', title: 'Une qualité maîtrisée', desc: 'Une sélection rigoureuse des produits et une exécution soignée.' },
+  { num: '04', title: 'Une présentation élégante', desc: 'Des buffets conçus pour séduire autant les yeux que les papilles.' },
+  { num: '05', title: 'Un accompagnement de A à Z', desc: 'De la conception à la réalisation, nous vous accompagnons à chaque étape.' },
+];
 
 export default function BookingCta() {
   return (
-    <section id="booking" className="py-20 px-4 bg-slate-50 dark:bg-slate-900">
-        <div className="max-w-5xl mx-auto glass-card bg-white/90 dark:bg-slate-800/90 rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-12 lg:p-20 relative overflow-hidden shadow-xl border border-white/40">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-300 via-primary to-blue-300"></div>
-            
-            <div className="text-center mb-16">
-                <h3 className="text-4xl mb-4 text-slate-800 dark:text-white">Conditions de Réservation</h3>
-                <p className="text-sm opacity-60 uppercase tracking-widest text-slate-600 dark:text-slate-400">Organisons ensemble votre succès</p>
-            </div>
-
-            {/* Changed md:grid-cols-2 to lg:grid-cols-2 to prevent text squashing on tablets */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-10">
-                    <div className="flex items-center gap-4 md:gap-6">
-                        <div className="w-16 h-16 bg-purple-50 dark:bg-purple-900/20 rounded-[1.2rem] flex items-center justify-center flex-shrink-0">
-                            <span className="material-symbols-outlined text-primary text-2xl">schedule</span>
-                        </div>
-                        <div className="flex-1">
-                            <h6 className="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1">Anticipation</h6>
-                            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Réservation minimum 10 jours avant l'événement.</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4 md:gap-6">
-                        <div className="w-16 h-16 bg-purple-50 dark:bg-purple-900/20 rounded-[1.2rem] flex items-center justify-center flex-shrink-0">
-                            <span className="material-symbols-outlined text-primary text-2xl">payments</span>
-                        </div>
-                        <div className="flex-1">
-                            <h6 className="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1">Confirmation</h6>
-                            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Acompte de 50% requis pour validation ferme.</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4 md:gap-6">
-                        <div className="w-16 h-16 bg-purple-50 dark:bg-purple-900/20 rounded-[1.2rem] flex items-center justify-center flex-shrink-0">
-                            <span className="material-symbols-outlined text-primary text-2xl">local_shipping</span>
-                        </div>
-                        <div className="flex-1">
-                            <h6 className="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1">Zone de Service</h6>
-                            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Livraison à Casablanca et environs (Bouznika, Dar Bouazza).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-white/50 dark:bg-slate-900/40 p-6 md:p-10 rounded-[2rem] text-center border border-white/30">
-                    <p className="italic mb-8 opacity-90 text-slate-700 dark:text-slate-200">Besoin d'un devis personnalisé ou d'une information rapide ?</p>
-                    
-                    {/* Fixed button: reduced text size to text-sm and used flex-shrink-0 on the icon */}
-                    <a 
-                        href="https://wa.me/212701145101" 
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={() => {
-                            if (typeof window.gtag !== 'undefined') {
-                                window.gtag('event', 'whatsapp_click', { 
-                                    event_category: 'booking_cta',
-                                    event_label: 'booking_section'
-                                });
-                            }
-                        }}
-                        className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-5 py-4 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-lg w-full"
-                    >
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current flex-shrink-0"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.449-1.27.61-1.444.161-.173.346-.217.461-.217.115 0 .231.001.331.005.106.004.25-.039.391.305.143.347.491 1.196.535 1.281.043.086.072.187.015.304-.058.117-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.777 1.394.864.174.088.275.073.376-.042.101-.116.433-.506.548-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"></path></svg>
-                        <span className="uppercase tracking-wide">Contacter via WhatsApp</span>
-                    </a>
-                    
-                    <p className="text-[10px] uppercase tracking-widest mt-6 opacity-40 text-slate-500 dark:text-slate-400">Réponse sous 24h ouvrées</p>
-                </div>
-            </div>
+    <section id="pourquoi" className="cb-section" style={{ background: '#EEE4FA' }}>
+      <div className="cb-container cb-why-grid">
+        <div className="cb-why-aside">
+          <span className="cb-eyebrow">Pourquoi Casa Buffet</span>
+          <h2 className="cb-h2">
+            Bien plus qu'un{' '}
+            <span className="script" style={{ color: '#6A48AC', fontWeight: 400, fontSize: '1.06em' }}>buffet.</span>
+          </h2>
+          <p className="cb-body" style={{ fontSize: 16, margin: '22px 0 28px', maxWidth: 380 }}>
+            Nous sommes convaincus que la réussite d'un événement repose sur l'équilibre entre qualité, présentation et attention portée aux détails. C'est cette philosophie qui guide chacune de nos réalisations.
+          </p>
+          <img src={photo(SETS.dessert[1])} alt="Présentation Casa Buffet" loading="lazy" />
         </div>
+
+        <div>
+          {reasons.map((r) => (
+            <div key={r.num} className="cb-why-item">
+              <span className="cb-why-num">{r.num}</span>
+              <div>
+                <h4>{r.title}</h4>
+                <p>{r.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
