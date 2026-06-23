@@ -102,10 +102,8 @@ export const SETS = {
   professional: [
     'sitepro-1.jpeg',
     'sitepro-2.jpeg',
-    'sitepro-3.jpeg',
     'sitepro-4.jpeg',
     'sitepro-5.jpeg',
-    'sitepro-6.jpeg',
     '14B2F697-C396-409E-B996-B27C20849162.jpeg',
     'AA56B84C-F52D-4600-82AD-101D19AAC7E7.jpeg',
     '9071E6BF-125B-45C2-BC64-1F3D3A44D6D1.jpeg',
@@ -121,8 +119,6 @@ export const SETS = {
     'babyshower-1.png',
     'babyshower-2.png',
     'babyshower-3.png',
-    '1ADE5784-ACB5-4C15-B920-30CA5E3C8E8C.jpeg',
-    '3117007D-0604-4F6B-9EE7-D1F7731FC46B.jpeg',
   ],
   anniversaire: [
     'anniversaire-1.jpeg',
