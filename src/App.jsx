@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { LightboxProvider } from './components/Lightbox';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </LightboxProvider>
   );
 }
