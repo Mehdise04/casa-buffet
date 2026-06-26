@@ -19,7 +19,7 @@ app.post('/api/send-email', async (req, res) => {
     const { user_email, user_name, message } = req.body;
 
     const FROM = process.env.CONTACT_FROM || 'CasaBuffet <onboarding@resend.dev>';
-    const TO = (process.env.CONTACT_TO || 'casa.buffet001@gmail.com').split(',').map((s) => s.trim());
+    const TO = (process.env.CONTACT_TO || 'mehdisifessalam111@gmail.com').split(',').map((s) => s.trim());
 
     try {
         const { data, error } = await resend.emails.send({

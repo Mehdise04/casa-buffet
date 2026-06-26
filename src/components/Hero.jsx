@@ -34,7 +34,7 @@ export default function Hero() {
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}
             </div>
             <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-              <strong style={{ color: '#fff' }}>5 / 5</strong> sur Google · +500 événements réalisés
+              <strong style={{ color: '#fff' }}>5 / 5</strong> sur Google · +150 événements réalisés
             </span>
           </div>
         </div>
