@@ -305,6 +305,41 @@ section[id] { scroll-margin-top: 90px; }
 .cb-contact { padding: 104px 0; position: relative; overflow: hidden; background: linear-gradient(135deg, #5A3E96 0%, #7B5BC0 100%); }
 .cb-contact-inner { max-width: 760px; margin: 0 auto; padding: 0 40px; text-align: center; position: relative; }
 
+/* ---------- contact form ---------- */
+.cb-form-card {
+  background: #fff; border-radius: 26px; padding: 34px 34px 38px;
+  max-width: 600px; margin: 40px auto 0; text-align: left;
+  box-shadow: 0 30px 60px rgba(40, 26, 80, 0.28);
+}
+.cb-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cb-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.cb-field label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: #8B73C4; }
+.cb-input {
+  width: 100%; font-family: inherit; font-size: 15px; color: #3A2B62;
+  background: #F6F1FC; border: 1px solid #E4D8F5; border-radius: 14px;
+  padding: 14px 16px; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.cb-input::placeholder { color: #A99AC4; }
+.cb-input:focus { outline: none; border-color: var(--plum-l); box-shadow: 0 0 0 3px rgba(138, 108, 212, 0.25); }
+textarea.cb-input { resize: vertical; min-height: 130px; }
+.cb-form-submit {
+  width: 100%; border: 0; cursor: pointer; color: #fff; font-weight: 700;
+  font-family: inherit; font-size: 15px; letter-spacing: .5px;
+  padding: 16px; border-radius: 999px;
+  background: linear-gradient(135deg, #8A6CD4, #6A48AC);
+  box-shadow: 0 12px 28px rgba(106, 72, 172, 0.3);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.cb-form-submit:hover { transform: translateY(-2px); }
+.cb-form-submit:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+.cb-form-msg { margin-top: 16px; padding: 14px; border-radius: 14px; text-align: center; font-size: 14px; }
+.cb-form-msg.ok { background: #ECFDF3; color: #157347; border: 1px solid #B7EBC6; }
+.cb-form-msg.err { background: #FDECEC; color: #B42318; border: 1px solid #F3C0BC; }
+@media (max-width: 560px) {
+  .cb-form-row { grid-template-columns: 1fr; }
+  .cb-form-card { padding: 26px 20px 30px; }
+}
+
 /* ---------- footer ---------- */
 .cb-footer { background: #231C36; color: #CFC6E0; padding: 72px 0 36px; }
 .cb-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; }
