@@ -1,5 +1,5 @@
 /* ============================================================
-   Casa Buffet Events — site styles
+   CasaBuffet Events — site styles
    Ported from the design refinement, with responsive behaviour.
    ============================================================ */
 :root {
@@ -41,6 +41,7 @@ section[id] { scroll-margin-top: 90px; }
   font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
   color: #8B73C4; font-weight: 600;
 }
+.cb-eyebrow-lg { font-size: 30px; letter-spacing: 2px; color: var(--plum); }
 
 /* ---------- buttons ---------- */
 .cb-btn {

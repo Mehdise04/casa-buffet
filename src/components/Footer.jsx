@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="cb-footer">
       <div className="cb-container cb-footer-grid">
         <div>
-          <div className="cb-footer-name">Casa Buffet</div>
+          <div className="cb-footer-name">CasaBuffet</div>
           <div className="cb-footer-sub">E V E N T S</div>
           <p style={{ fontSize: 15, lineHeight: 1.7, color: '#9D93B8', maxWidth: 300 }}>
             Buffets &amp; douceurs qui réchauffent le cœur. Des prestations élégantes pour vos événements privés et professionnels.
@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
 
       <div className="cb-footer-bottom">
-        <span>© 2026 Casa Buffet Events. Tous droits réservés.</span>
+        <span>© 2026 CasaBuffet Events. Tous droits réservés.</span>
         <span>Buffets &amp; bonheur · Casablanca</span>
       </div>
     </footer>

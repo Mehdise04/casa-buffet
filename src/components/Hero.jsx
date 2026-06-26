@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="cb-hero-content">
           <span className="cb-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 9 }}>
             <Sparkle />
-            Casablanca · Événements sur mesure
+            CasaBuffet · Événements sur mesure
           </span>
           <h1 className="cb-h1">
             Les plus beaux événements se jouent souvent dans les{' '}

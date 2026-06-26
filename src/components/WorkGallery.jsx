@@ -13,7 +13,7 @@ const solutions = [
 ];
 
 const realisations = [
-  { src: SETS.professional[6], label: 'Séminaire médical' },
+  { src: 'sitepro-7.jpeg', label: 'Séminaire médical' },
   { src: SETS.professional[4], label: 'Lancement de produit' },
   { src: SETS.professional[5], label: 'Team Building' },
   { src: SETS.professional[7], label: 'Formation professionnelle' },
@@ -30,13 +30,13 @@ export default function WorkGallery() {
     <section id="pro" style={{ padding: '118px 0', background: '#E6DBF6' }}>
       <div className="cb-container">
         <div style={{ maxWidth: 720 }}>
-          <span className="cb-eyebrow">Événements professionnels</span>
+          <span className="cb-eyebrow cb-eyebrow-lg">Événements professionnels</span>
           <h2 className="cb-h2">Une prestation à l'image de votre entreprise</h2>
           <p className="cb-body" style={{ marginTop: 18, fontWeight: 500, color: '#4A4360' }}>
             Parce que votre image mérite une prestation à la hauteur.
           </p>
           <p className="cb-body" style={{ marginTop: 14 }}>
-            Réunion de direction, séminaire, lancement de produit, formation ou réception client : chaque événement professionnel reflète l'image de votre organisation. Casa Buffet accompagne les entreprises avec des prestations élégantes, flexibles et adaptées à leurs exigences.
+            Réunion de direction, séminaire, lancement de produit, formation ou réception client : chaque événement professionnel reflète l'image de votre organisation. CasaBuffet accompagne les entreprises avec des prestations élégantes, flexibles et adaptées à leurs exigences.
           </p>
         </div>
 

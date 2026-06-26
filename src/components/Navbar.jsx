@@ -5,7 +5,7 @@ import { WhatsAppIcon } from './icons';
 const links = [
   { href: '#accueil', label: 'Accueil' },
   { href: '#prives', label: 'Événements privés' },
-  { href: '#pro', label: 'Professionnels' },
+  { href: '#pro', label: 'Événements professionnels' },
   { href: '#pourquoi', label: 'Pourquoi nous' },
   { href: '#galerie', label: 'Galerie' },
   { href: '#contact', label: 'Contact' },
@@ -18,8 +18,8 @@ export default function Navbar() {
     <header className="cb-header">
       <div className="cb-container-wide">
         <div className="cb-nav">
-          <a href="#accueil" className="cb-brand" aria-label="Casa Buffet Events">
-            <img src="/casabuffet logo watermark.png" alt="Casa Buffet Events" />
+          <a href="#accueil" className="cb-brand" aria-label="CasaBuffet Events">
+            <img src="/casabuffet logo watermark.png" alt="CasaBuffet Events" />
           </a>
 
           <nav className="cb-nav-links">

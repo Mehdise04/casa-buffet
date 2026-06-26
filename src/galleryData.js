@@ -1,4 +1,4 @@
-// Real Casa Buffet photo library, classified by visual analysis of each image.
+// Real CasaBuffet photo library, classified by visual analysis of each image.
 // Vite bundles everything under src/assets/images and gives us hashed URLs.
 const modules = import.meta.glob('./assets/images/*.{jpeg,jpg,png}', { eager: true, query: '?url', import: 'default' });
 
@@ -102,7 +102,6 @@ export const SETS = {
     'sitepro-1.jpeg',
     'sitepro-2.jpeg',
     'sitepro-4.jpeg',
-    'sitepro-5.jpeg',
     '14B2F697-C396-409E-B996-B27C20849162.jpeg',
     'AA56B84C-F52D-4600-82AD-101D19AAC7E7.jpeg',
     '9071E6BF-125B-45C2-BC64-1F3D3A44D6D1.jpeg',

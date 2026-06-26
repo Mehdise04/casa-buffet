@@ -17,7 +17,7 @@ export default function BookingCta() {
     <section id="pourquoi" className="cb-section" style={{ background: '#EEE4FA' }}>
       <div className="cb-container cb-why-grid">
         <div className="cb-why-aside">
-          <span className="cb-eyebrow">Pourquoi Casa Buffet</span>
+          <span className="cb-eyebrow">Pourquoi CasaBuffet</span>
           <h2 className="cb-h2">
             Bien plus qu'un{' '}
             <span className="script" style={{ color: '#6A48AC', fontWeight: 400, fontSize: '1.06em' }}>buffet.</span>
@@ -25,7 +25,7 @@ export default function BookingCta() {
           <p className="cb-body" style={{ fontSize: 16, margin: '22px 0 28px', maxWidth: 380 }}>
             Nous sommes convaincus que la réussite d'un événement repose sur l'équilibre entre qualité, présentation et attention portée aux détails. C'est cette philosophie qui guide chacune de nos réalisations.
           </p>
-          <img src={pic} alt="Présentation Casa Buffet" loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => open([{ src: pic, caption: 'Casa Buffet' }], 0)} />
+          <img src={pic} alt="Présentation CasaBuffet" loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => open([{ src: pic, caption: 'CasaBuffet' }], 0)} />
         </div>
 
         <div>

@@ -56,7 +56,7 @@ export default function Gallery() {
         <div className="cb-gal-row" ref={rowRef}>
           {files.map((name, i) => (
             <figure key={name} className="cb-gal-card cb-zoomable" onClick={() => openAt(i)}>
-              <img src={photo(name)} alt={`${activeLabel} — Casa Buffet`} loading="lazy" decoding="async" />
+              <img src={photo(name)} alt={`${activeLabel} — CasaBuffet`} loading="lazy" decoding="async" />
               <ZoomBadge />
             </figure>
           ))}

@@ -1,4 +1,4 @@
-// Shared site data — real Casa Buffet contact channels and assets.
+// Shared site data — real CasaBuffet contact channels and assets.
 export const WHATSAPP = 'https://wa.me/212701145101';
 export const PHONE_DISPLAY = '+212 701-145101';
 export const EMAIL = 'casa.buffet001@gmail.com';

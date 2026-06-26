@@ -7,7 +7,7 @@ const categories = [
     num: '01', side: 'text-left', title: 'Fiançailles',
     desc: "Des buffets raffinés et des coffrets cadeaux conçus pour accompagner l'un des plus beaux moments de votre vie.",
     layout: 'l3a',
-    imgs: [SETS.engagement[0], SETS.engagement[4], SETS.engagement[5]],
+    imgs: ['7454801F-40ED-40FD-BECE-0E438F585D2C.jpeg', SETS.engagement[0], SETS.engagement[5]],
   },
   {
     num: '02', side: 'text-right', title: 'Soutenances',
@@ -36,7 +36,7 @@ function Collage({ layout, imgs, title }) {
     <div className={`cb-collage ${layout}`}>
       {imgs.map((name, i) => (
         <figure key={name} className="cb-cell cb-zoomable" onClick={() => openAt(i)}>
-          <img src={photo(name)} alt={`${title} — Casa Buffet`} loading="lazy" />
+          <img src={photo(name)} alt={`${title} — CasaBuffet`} loading="lazy" />
           <ZoomBadge />
         </figure>
       ))}
@@ -59,13 +59,13 @@ export default function Services() {
     <section id="prives" style={{ padding: '118px 0 96px', background: '#F5EFFC' }}>
       <div className="cb-container">
         <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
-          <span className="cb-eyebrow">Événements privés</span>
+          <span className="cb-eyebrow cb-eyebrow-lg">Événements privés</span>
           <h2 className="cb-h2">
             Parce que certains moments méritent d'être{' '}
             <span className="script" style={{ color: '#6A48AC', fontWeight: 400, fontSize: '1.05em' }}>inoubliables.</span>
           </h2>
           <p className="cb-body" style={{ marginTop: 22 }}>
-            Casa Buffet accompagne vos événements privés avec des prestations élégantes, personnalisées et pensées dans les moindres détails.
+            CasaBuffet accompagne vos événements privés avec des prestations élégantes, personnalisées et pensées dans les moindres détails.
           </p>
         </div>
 
