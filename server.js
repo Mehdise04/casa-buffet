@@ -12,16 +12,19 @@ app.use(express.json());
 
 // Initialize Resend with the user's API key
 // NOTE: In production, this should be in an .env file
-const resend = new Resend('re_PmerWKmA_Nj7ttyNgd5L4EBN8KRauBUEt');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Routes
 app.post('/api/send-email', async (req, res) => {
     const { user_email, user_name, message } = req.body;
 
+    const FROM = process.env.CONTACT_FROM || 'CasaBuffet <onboarding@resend.dev>';
+    const TO = (process.env.CONTACT_TO || 'casa.buffet001@gmail.com').split(',').map((s) => s.trim());
+
     try {
-        const data = await resend.emails.send({
-            from: 'Casa Buffet <onboarding@resend.dev>', // Default testing domain for Resend
-            to: ['casa.buffet001@gmail.com'], // Send to the business email
+        const { data, error } = await resend.emails.send({
+            from: FROM,
+            to: TO,
             reply_to: user_email,
             subject: `Nouveau message de ${user_name}`,
             html: `
@@ -32,6 +35,10 @@ app.post('/api/send-email', async (req, res) => {
             `
         });
 
+        if (error) {
+            console.error('Resend error:', error);
+            return res.status(502).json({ success: false, error: error.message || error });
+        }
         res.status(200).json({ success: true, data });
     } catch (error) {
         console.error('Error sending email:', error);
