@@ -116,9 +116,9 @@ export const SETS = {
   ],
   // New real-event categories from the Siteweb drop
   babyshower: [
-    'babyshower-1.png',
-    'babyshower-2.png',
-    'babyshower-3.png',
+    'babyshower-1.jpeg',
+    'babyshower-2.jpeg',
+    'babyshower-3.jpeg',
   ],
   anniversaire: [
     'anniversaire-1.jpeg',

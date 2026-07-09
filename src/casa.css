@@ -107,7 +107,7 @@ section[id] { scroll-margin-top: 90px; }
   position: relative; padding: 124px 0 112px; overflow: hidden;
   background:
     linear-gradient(100deg, rgba(40, 28, 70, 0.95) 0%, rgba(74, 52, 128, 0.80) 40%, rgba(106, 72, 172, 0.36) 72%, rgba(106, 72, 172, 0.10) 100%),
-    url('/hero.png') center 38% / cover no-repeat;
+    url('/hero.jpg') center 38% / cover no-repeat;
 }
 .cb-hero-inner { display: flex; }
 .cb-hero-content { max-width: 640px; }
@@ -382,7 +382,7 @@ textarea.cb-input { resize: vertical; min-height: 130px; }
     padding: 90px 0 78px;
     background:
       linear-gradient(165deg, rgba(38, 27, 66, 0.93) 0%, rgba(64, 45, 112, 0.84) 52%, rgba(106, 72, 172, 0.5) 100%),
-      url('/hero.png') center / cover no-repeat;
+      url('/hero.jpg') center / cover no-repeat;
   }
 }
 
