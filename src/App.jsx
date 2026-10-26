@@ -8,22 +8,30 @@ import BookingCta from './components/BookingCta';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ServicePage from './components/ServicePage';
 import { LightboxProvider } from './components/Lightbox';
 import { Analytics } from '@vercel/analytics/react';
+import { findService } from './seo';
 
-function App() {
+/** `path` is the page being shown, e.g. "/" or "/fiancailles" (see seo.js ROUTES). */
+function App({ path = '/' }) {
+  const service = findService(path);
   return (
     <LightboxProvider>
-      <Navbar />
-      <main>
-        <Hero />
-        <Concept />
-        <Services />
-        <WorkGallery />
-        <BookingCta />
-        <Gallery />
-        <Contact />
-      </main>
+      <Navbar onHome={!service} />
+      {service ? (
+        <ServicePage service={service} />
+      ) : (
+        <main>
+          <Hero />
+          <Concept />
+          <Services />
+          <WorkGallery />
+          <BookingCta />
+          <Gallery />
+          <Contact />
+        </main>
+      )}
       <Footer />
       <Analytics />
     </LightboxProvider>

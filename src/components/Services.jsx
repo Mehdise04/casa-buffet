@@ -1,28 +1,29 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
 import { useLightbox, ZoomBadge } from './Lightbox';
+import { Arrow } from './icons';
 
 const categories = [
   {
-    num: '01', side: 'text-left', title: 'Fiançailles',
+    num: '01', side: 'text-left', title: 'Fiançailles', href: '/fiancailles',
     desc: "Des buffets raffinés et des coffrets cadeaux conçus pour accompagner l'un des plus beaux moments de votre vie.",
     layout: 'l3a',
     imgs: ['7454801F-40ED-40FD-BECE-0E438F585D2C.jpeg', SETS.engagement[0], SETS.engagement[5]],
   },
   {
-    num: '02', side: 'text-right', title: 'Soutenances',
+    num: '02', side: 'text-right', title: 'Soutenances', href: '/soutenances',
     desc: 'Célébrez vos réussites dans une ambiance conviviale et élégante.',
     layout: 'l3b',
     imgs: [SETS.soutenance[1], SETS.soutenance[0], SETS.soutenance[2]],
   },
   {
-    num: '03', side: 'text-left', title: 'Baby Shower & Naissances',
+    num: '03', side: 'text-left', title: 'Baby Shower & Naissances', href: '/baby-shower',
     desc: 'Des prestations adaptées et délicates pour accueillir les moments les plus précieux.',
     layout: 'l3a',
     imgs: [SETS.babyshower[0], SETS.babyshower[1], SETS.babyshower[2]],
   },
   {
-    num: '04', side: 'text-right', title: 'Anniversaires',
+    num: '04', side: 'text-right', title: 'Anniversaires', href: '/anniversaires',
     desc: 'Anniversaires, réunions familiales et célébrations sur mesure, pour petits et grands.',
     layout: 'l3a',
     imgs: [SETS.anniversaire[0], SETS.anniversaire[1], SETS.anniversaire[2]],
@@ -44,12 +45,15 @@ function Collage({ layout, imgs, title }) {
   );
 }
 
-function TextBlock({ num, title, desc }) {
+function TextBlock({ num, title, desc, href }) {
   return (
     <div>
       <span className="cb-prive-num">{num}</span>
-      <h3 className="cb-prive-title">{title}</h3>
+      <h3 className="cb-prive-title"><a href={href}>{title}</a></h3>
       <p className="cb-prive-desc">{desc}</p>
+      <a href={href} className="cb-more-link">
+        Découvrir <Arrow size={15} stroke="#6A48AC" />
+      </a>
     </div>
   );
 }

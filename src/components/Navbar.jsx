@@ -11,20 +11,22 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onHome = true }) {
   const [open, setOpen] = useState(false);
+  // On a service page the section links go back to the home page.
+  const to = (hash) => (onHome ? hash : `/${hash}`);
 
   return (
     <header className="cb-header">
       <div className="cb-container-wide">
         <div className="cb-nav">
-          <a href="#accueil" className="cb-brand" aria-label="CasaBuffet Events">
+          <a href={to('#accueil')} className="cb-brand" aria-label="CasaBuffet Events">
             <img src="/casabuffet logo watermark.png" alt="CasaBuffet Events" />
           </a>
 
           <nav className="cb-nav-links">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="cb-nav-link">{l.label}</a>
+              <a key={l.href} href={to(l.href)} className="cb-nav-link">{l.label}</a>
             ))}
           </nav>
 
@@ -44,7 +46,7 @@ export default function Navbar() {
       {open && (
         <div className="cb-mobile" style={{ display: 'flex' }}>
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
+            <a key={l.href} href={to(l.href)} onClick={() => setOpen(false)}>{l.label}</a>
           ))}
           <a href={WHATSAPP} target="_blank" rel="noreferrer" className="cb-btn cb-btn-primary" onClick={() => setOpen(false)}>
             <WhatsAppIcon /> Devis WhatsApp

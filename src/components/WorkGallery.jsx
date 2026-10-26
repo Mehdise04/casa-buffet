@@ -1,6 +1,6 @@
 import React from 'react';
 import { photo, SETS } from '../galleryData';
-import { Check } from './icons';
+import { Arrow, Check } from './icons';
 import { useLightbox, ZoomBadge } from './Lightbox';
 
 const solutions = [
@@ -38,6 +38,9 @@ export default function WorkGallery() {
           <p className="cb-body" style={{ marginTop: 14 }}>
             Réunion de direction, séminaire, lancement de produit, formation ou réception client : chaque événement professionnel reflète l'image de votre organisation. CasaBuffet accompagne les entreprises avec des prestations élégantes, flexibles et adaptées à leurs exigences.
           </p>
+          <a href="/evenements-professionnels" className="cb-more-link">
+            Découvrir nos prestations entreprises <Arrow size={15} stroke="#6A48AC" />
+          </a>
         </div>
 
         <div className="cb-pro-strip">
