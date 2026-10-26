@@ -2,6 +2,10 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Visitor input goes into the email's HTML, so it must not be able to add markup.
+const esc = (s) =>
+  String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
@@ -21,9 +25,9 @@ export default async function handler(req, res) {
       subject: `Nouveau message de ${user_name}`,
       html: `
         <h3>Nouveau message reçu via le site web</h3>
-        <p><strong>De:</strong> ${user_name} (${user_email})</p>
+        <p><strong>De:</strong> ${esc(user_name)} (${esc(user_email)})</p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p>${esc(message)}</p>
       `
     });
 

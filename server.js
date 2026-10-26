@@ -14,6 +14,10 @@ app.use(express.json());
 // NOTE: In production, this should be in an .env file
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Visitor input goes into the email's HTML, so it must not be able to add markup.
+const esc = (s) =>
+    String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
 // Routes
 app.post('/api/send-email', async (req, res) => {
     const { user_email, user_name, message } = req.body;
@@ -29,9 +33,9 @@ app.post('/api/send-email', async (req, res) => {
             subject: `Nouveau message de ${user_name}`,
             html: `
                 <h3>Nouveau message reçu via le site web</h3>
-                <p><strong>De:</strong> ${user_name} (${user_email})</p>
+                <p><strong>De:</strong> ${esc(user_name)} (${esc(user_email)})</p>
                 <p><strong>Message:</strong></p>
-                <p>${message}</p>
+                <p>${esc(message)}</p>
             `
         });
 
