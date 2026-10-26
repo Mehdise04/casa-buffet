@@ -50,12 +50,6 @@ export default function Footer() {
       <div className="cb-footer-bottom">
         <span>© 2026 CasaBuffet Events. Tous droits réservés.</span>
         <span>Buffets &amp; bonheur · Casablanca</span>
-        <span>
-          Site réalisé par{' '}
-          <a href="https://www.mehdise.com/fr/work/casa-buffet" className="cb-flink" style={{ display: 'inline' }}>
-            El Mehdi Sif Essalam
-          </a>
-        </span>
       </div>
     </footer>
   );
